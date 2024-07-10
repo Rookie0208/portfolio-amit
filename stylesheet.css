@@ -543,3 +543,9 @@ text-align: justify;
 .word-text {
     width: 70vw;
 }
+
+@media (max-width: 400px) {
+    .work-container {
+        margin-left: 1rem;
+    }
+}
