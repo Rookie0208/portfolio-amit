@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<!-- BHAI KHUD KARLE KUCH TOH 😒😒 -->
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
+    <title>github</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=andika">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="preloader.css">
+    <link rel="stylesheet" href="./mobileNav.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    .pop {
+        /* border: 2px solid black; */
+        /* box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4); */
+        border-radius: 15px;
+        filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.4));
+    }
+
+    .pop a {
+        text-decoration: none;
+        color: rgb(38, 37, 37);
+        cursor: pointer;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .section5 {
+        background-color: rgba(10, 10, 10, 0.2);
+    }
+
+    .skill_box {
+        height: 100vh;
+        display: flex;
+        overflow-x: scroll;
+        width: 100%;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 24px;
+        border-radius: 8px;
+        /* gap: 12px; */
+    }
+
+    .skill_box .boxx {
+        flex: 0 0 100%;
+        padding: 30px;
+        border-radius: 8px;
+        scroll-snap-align: start;
+    }
+
+    .skill_container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 5rem;
+    }
+
+    @media(max-width: 400px) {
+        .skill_box {
+            /* height: 100%; */
+            display: flex;
+            /* justify-content: flex-start; */
+            /* align-items: flex-start; */
+        }
+
+        .skill_box .boxx {
+            flex: 0 0 90%;
+            padding: 10px;
+            scroll-snap-align: x mandatory;
+
+        }
+
+        .skill_container {
+            border-radius: 0;
+        }
+    }
+
+    .skill_box {
+        transition: all 0.25s ease-in;
+        transform: translateX(0);
+    }
+
+    @media(max-width: 400px) {
+        .skill_box {
+            height: 100vh;
+        }
+    }
+
+    .skill_box .boxx {
+        display: flex;
+        /* justify-content: space-between; */
+        /* grid-template-columns: repeat(2, 1fr); */
+        align-items: center;
+        /* overflow: hidden; */
+        position: relative;
+    }
+
+    @media(max-width: 400px) {
+        .skill_box .boxx {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(1, 1fr);
+        }
+    }
+
+    .skill_box .boxx .bg {
+        padding: 2rem;
+        /* background-color: rgba(0, 0, 0, 0.2); */
+        width: 40%;
+        /* transform: skewX(7deg); */
+        position: absolute;
+        height: 90%;
+        left: 4%;
+        padding-left: 15rem;
+        transform-origin: 0 100%;
+    }
+
+    /* @media(max-width: 400px) {
+        .skill_box .boxx .bg {
+            width: 40%;
+        }
+    } */
+
+    @media(max-width: 400px) {
+        .skill_box .boxx .bg {
+            width: 6%;
+            left: 0;
+            bottom: 0;
+            height: 54%;
+            /* transform: skewX(0deg); */
+        }
+    }
+
+    .skill_box .boxx .bg::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: inherit;
+        pointer-events: none;
+        transform: skewX(10deg);
+    }
+
+    @media(max-width: 400px) {
+        .skill_box .boxx .bg::before {
+            /* width: 120%; */
+            /* bottom: 0; */
+            transform: skewX(0deg);
+        }
+    }
+
+    .skill_box .boxx .details {
+        padding: 5rem;
+        /* background-color: red; */
+        /* padding-left: 10rem; */
+        z-index: 100;
+        /* grid-column: 1/span 1; */
+        /* grid-row: 1/-1; */
+    }
+
+    .inner img {
+        height: 300px;
+        /* background-color: red; */
+        padding-right: 40px;
+    }
+
+    button {
+        padding: 8px;
+        margin: 10px;
+        margin-top: 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .skill_box .boxx .details h1 {
+        font-family: 'kalam';
+        font-size: 70px;
+        padding: 10px;
+    }
+
+    .skill_box .boxx .details p {
+        font-family: 'mulish';
+        font-size: 35px;
+        padding: 10px;
+    }
+
+    @media (max-width: 400px) {
+        .skill_box .boxx .details {
+            padding: 30px;
+            z-index: 100;
+        }
+
+        .inner img {
+            height: 100px;
+            /* background-color: red; */
+            padding-right: 10px;
+        }
+
+        button {
+            padding: 3px;
+            margin: 4px;
+            margin-top: 10px;
+            border-radius: 4px;
+            border: none;
+            font-size: 12px;
+        }
+
+        .skill_box .boxx .details h1 {
+            /* font-family: 'kalam'; */
+            font-size: 35px;
+            padding: 4px;
+        }
+
+        .skill_box .boxx .details p {
+            /* font-family: 'mulish'; */
+            font-size: 20px;
+            padding: 4px;
+        }
+    }
+
+   
+    .dark {
+        background-color: #222;
+        color: #e6e6e6;
+    }
+    .dark h1 {
+        color: white
+    }
+    .dark h2 {
+        color: rgb(179, 180, 180);
+
+    }
+    .dark a {
+        color: rgb(228, 229, 229);
+    }
+
+    .dark li a {
+        color: white;
+    }
+    .dark .icons a {
+        color: white;
+    }
+
+
+</style>
+
+<body>
+    <!-- <div class="preloader">
+        <span class="ptext"></span>
+    </div> -->
+
+    <div class="big-nav">
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+
+        <div class="mobile-nav">
+            <i class="fa fa-times" id="pop" onclick="hideMenu()"></i>
+            <ul>
+                <li data-text="home"><a class="nav-links link_a" href="#home">home</a></li>
+                <li data-text="about-me"><a class="nav-links link_b" href="#about-me">about me</a></li>
+                <li data-text="work"><a class="nav-links link_c" href="#projects">work</a></li>
+                <li data-text="contact-me"><a class="nav-links link_d" href="#contact-me">contact-me</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <div class="icons">
+            <a href="http://www.facebook.com/amitsingh.rawat.777" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="http://www.instagram.com/amitrawat0208" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="http://www.twitter.com/AmitRawt1" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="http://www.linkedin.com/in/amit-rawat-47713020" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="http://www.github.com/Rookie0208" target="_blank"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="line"></div>
+        <div class="line2"></div>
+    </div>
+    <section class="section1 " id="home">
+        <a href="#" class="logo" title="click me" onclick="myFunction()"><span><span class="clr">@</span>mit rawat</span></a>
+        <!-- <i class="fa fa-bars" onclick="showMenu()"></i> -->
+        <nav class="developer">
+            <div class="nav-Links" id="navLinks">
+                <div class="icons">
+                    <a href="#home" target=""><i class="fa fa-home"></i></a>
+                    <a href="#about_me" target=""><i class="fa fa-user-o"></i></a>
+                    <a href="#projects" target=""><i class="fa fa-question-circle-o"></i></a>
+                    <a href="#contact_me" target=""><i class="fa fa-phone"></i></a>
+                </div>
+                <div class="line"></div>
+                <div class="line2"></div>
+            </div>
+        </nav>
+        <!-- <i class="fa fa-times" id="pop" onclick="hideMenu()"></i> -->
+
+        <div class="text-box slideanim">
+            <div class="container ">
+                    <h1 class="back">HELLO</h1>
+                <div class="text">
+                    <h3><span class="me">I </span>am</h3>
+                    <div class="backline"></div>
+                    <h1>Amit <span class="pop"><a href="./resume/Amit_Resume_2_Page.pdf" download="filename.pdf">Rawat</a></span></h1>
+                    <!-- <img src="snapcode.svg" alt="snapcode" height="250px"> -->
+                    <h2>a designer,<br>a developer</h2>
+                    <h2>and a programmer</h2>
+                </div>
+                <div class="my-img">
+                    <img src="./images/portrait1.jpg" alt="my_pic" height="400px">
+                </div>
+                <!-- <a href="#" class="hero-button">Download CV</a> -->
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .about-section {
+            margin-top: 5rem;
+        }
+    </style>
+
+    <section class="section2 " id="about_me">
+
+        <div class="text-box slideanim">
+            <div class="container about-section">
+                    <h1 class="back">ABOUT ME</h1>
+                <div class="text2 about-text">
+                    <h3>i am an emerging</h3>
+                    <h2>PROGRAMER</h2>
+                    <h3>and a junior software</h3>
+                    <h2>DEVELOPER.</h2>
+                    <h3>my hands have good <br>
+                        catch in</h3>
+                    <h2>WEB DEVELOPMENT</h2>
+                    <h3>except programing i love to do </h3>
+                    <h2>RAPPING.</h2>
+                    <p></p>
+                </div>
+                <div class="my-img">
+                    <img class="about-img" src="./images/portrait2.png" alt="snapcodeBitmoji" height="300px">
+                </div>
+            </div>
+            <!-- <a href="#" class="hero-button">Download CV</a> -->
+        </div>
+    </section>
+
+    <style>
+       
+    </style>
+
+    <section class="section3" id="projects">
+        <div class="text-box2 text-box slideanim">
+            <div class="container work-container">
+                    <h1 class="back">WORK</h1>
+                
+                <div class="text2 word-text">
+                    <h3>
+                        through the time i've worked on various projects which help me to continuously enhance
+                        my skill level. some of the projects which i've worked on recently are below..
+                        <br>have fun....
+                    </h3>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <style>
+        :root {
+            --cards: 3;
+            --cardHeight: 90vh;
+            --cardTopPadding: 1.5em;
+            --cardMargin: 4vw;
+        }
+
+        .section-skill {
+            height: 400vh;
+        }
+
+        .section-skill {
+            cursor: pointer;
+        }
+
+        .skill-container {
+            width: 90%;
+            margin: 0 auto;
+        }
+         #cards {
+            list-style: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(var(--cards), var(--cardHeight));
+            gap: var(--cardMargin);
+            padding-bottom: carc(var(--cards) * var(--cardTopPadding));
+            /* margin-bottom: var(--cardMargin); */
+         }
+
+         #card1 {
+            --index: 1;
+         }
+         #card2 {
+            --index: 2;
+         }
+         #card3 {
+            --index: 3;
+         }
+         #card4 {
+            --index: 4;
+         }
+
+         .card {
+            position: sticky;
+            top: 10px;
+            padding-top: carc(var(--index) * var(--cardTopPadding));
+         }
+
+         #card1 .card-body {
+            /* background-color: rgb(215, 67, 131); */
+            background-color: rgb(44,44,44);
+            /* height: 100vh; */
+         }
+         #card2 .card-body {
+            /* background-color: pink; */
+            background-color: rgb(253,253,254);
+            /* height: 100vh; */
+
+         }
+         #card3 .card-body {
+            background-color: rgb(63, 105, 142);
+            /* height: 100vh; */
+
+         }
+         #card4 .card-body {
+            /* background-color: rgb(63, 105, 142); */
+            background-color: rgb(215, 67, 131);
+            /* height: 100vh; */
+
+         }
+
+         .card-body {
+            box-sizing: border-box;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow:  0 0 20px 0 rgba(0,0,0,0.3);
+            /* display: flex; */
+            /* justify-content: center; */
+            /* align-items: center; */
+         }
+
+         li h2 {
+            font-size: 5rem;
+            margin-top: 2rem;
+            /* font-family: 'unica one'; */
+            font-family: 'mulish';
+            /* font-family: "Outfit", sans-serif; */
+            letter-spacing: 6px;
+            text-align: center;
+            color: rgb(240, 236, 236);
+         }
+
+         li a {
+            text-decoration: none;
+         }
+         li h5 {
+            color: rgb(240, 236, 236);
+            text-align: center;
+            font-family: 'Outfit';
+            letter-spacing: 6px;
+            font-size: 1.2rem;
+         }
+
+         .hrms-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+
+         #card2 h2, #card2 h5 {
+            color: rgb(187, 184, 184);
+
+         }
+
+         /* .curzor {
+            top: -5%;
+            width: 2rem;
+            height: 2rem;
+            background: #ffffff;
+            border-radius: 50%;
+            position: absolute;
+            mix-blend-mode: difference;
+            transition: opacity 300ms ease;
+
+        } */
+    </style>
+
+    <section class="section3 section-skill" id="skills">
+        <div class="skill-container">
+            <ul id="cards">
+                <li class="card" id="card1">
+                    <a href="hrms.html" target="_self">
+                     <div class="card-body">
+                        <h2>HRMS</h2>
+                        <div class="hrms-img">
+                            <img src="./images/hrms.gif" height="450px" alt="hrms image">
+                        </div>
+                        <h5>Human Resource Management System</h5>
+                     </div>
+                    </a>
+                </li>
+                <li class="card" id="card2">
+                    <a href="#">
+                    <div class="card-body">
+                       <h2>Edify</h2>
+                       <div class="hrms-img">
+                           <img src="./images/edify2.gif" height="500px" alt="hrms image">
+                        </div>
+                        <h5>An Educational Website</h5>
+                    </div>
+                    </a>
+               </li>
+               
+               <li class="card" id="card3">
+                <a href="#">
+                <div class="card-body">
+                   <h2>Algo-Visualizer</h2>
+                   <div class="hrms-img">
+                       <img src="./images/visualizer.gif" height="500px" alt="hrms image">
+                    </div>
+                    <h5>A Sorting Algorithm Visualizing App</h5>
+                </div>
+               </li>
+           </li>
+           <li class="card" id="card4">
+            <a href="#">
+            <div class="card-body">
+               <h2>SNKR-Cam</h2>
+               <div class="hrms-img">
+                   <img src="./images/reg_page_30.gif" height="500px" alt="hrms image">
+                </div>
+                <h5>A Social Media Platform for SNKR-Heads</h5>
+            </div>
+            </a>
+       </li>
+            </ul>
+        </div>
+
+    </section>
+    <!-- <div class="curzor"></div> -->
+   <script>
+//     const curzor = document.querySelector(".curzor");
+// const section3 = document.querySelector(".section3");
+
+// document.addEventListener("mousemove", (e) => {
+//   const section3Rect = section3.getBoundingClientRect();
+  
+//   if (
+//     e.clientX >= section3Rect.left &&
+//     e.clientX <= section3Rect.right &&
+//     e.clientY >= section3Rect.top &&
+//     e.clientY <= section3Rect.bottom
+//   ) {
+//     curzor.style.cssText = `top: ${e.clientY - 2}px; left: ${e.clientX - 2}px`;
+//   }
+// });
+
+   </script>
+    <style>
+.contact-section {
+    margin-top: 10rem;
+}
+    </style>
+
+    <section class="section4" id="contact_me">
+        <div class="text-box2 slideanim">
+            <div class="container contact-section">
+                    <h1 class="back">CONTACT</h1>
+                <div class="text3">
+                    <div class="cta">
+                        <h1>Impressed by work !! <br class="typing">Let's work together.</h1>
+                        <!-- <h2><a href="index.html">hii@amitsr.com</a></h2> -->
+
+                        <div class="touch">
+                            <a href="mailto:amitsr0208@gmail.com" class="link">hii@amitsr.co</a>
+                            <a href="tel:9643362998" class="link2">+919643362998</a>
+                        </div>
+
+                    </div>
+                    <div class="icons">
+                        <a href="http://www.facebook.com/amitsingh.rawat.777" target="_blank"><i
+                                class="fa fa-facebook"></i></a>
+                        <a href="http://www.instagram.com/amitrawat0208" target="_blank"><i
+                                class="fa fa-instagram"></i></a>
+                        <a href="http://www.twitter.com/AmitRawt1" target="_blank"><i class="fa fa-twitter"></i></a>
+                        <a href="http://www.linkedin.com/in/amit-rawat-47713020" target="_blank"><i
+                                class="fa fa-linkedin"></i></a>
+                        <a href="http://www.linkedin.com/in/amit-rawat-47713020" target="_blank"><i
+                                class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- </div> -->
+</body>
+
+<!-- JavaScript for Toggle Menu -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="./preloaderJs.js"></script>
+<script src="./mobileNav.js"></script>
+<script>
+    function myFunction() {
+        // let text = document.getElementsByClassName(".text");
+        var element = document.body;
+        element.classList.toggle("dark");
+        // text.classList.add('dark');
+    }
+    // $(document).ready(function(){
+    //       // Add smooth scrolling to all links in navbar + footer link
+    //       $(".navbar a, footer a[href='#home']").on('click', function(event) {
+    //         // Make sure this.hash has a value before overriding default behavior
+    //         if (this.hash !== "") {
+    //           // Prevent default anchor click behavior
+    //           event.preventDefault();
+
+    //           // Store hash
+    //           var hash = this.hash;
+
+    //           // Using jQuery's animate() method to add smooth page scroll
+    //           // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+    //           $('html, body').animate({
+    //             scrollTop: $(hash).offset().top
+    //           }, 900, function(){
+
+    //             // Add hash (#) to URL when done scrolling (default click behavior)
+    //             window.location.hash = hash;
+    //           });
+    //         } // End if
+    //       });
+
+    //       $(window).scroll(function() {
+    //         $(".slideanim").each(function(){
+    //           var pos = $(this).offset().top;
+
+    //           var winTop = $(window).scrollTop();
+    //             if (pos < winTop + 400) {
+    //               $(this).addClass("slide");
+    //             }
+    //         });
+    //       });
+    //     })
+
+    // light and dark theme 
+    // let theme = document.getElementById("mode").value;
+    // theme.addEventListener('click', function () {
+    //     document.getElementsByTagName("meta")[0].content = theme;
+
+    // })
+    // function switchTheme() {
+    //     const theme = document.getElementById("mode").value;
+    //     document.getElementsByTagName("meta")[0].content = theme;
+    // }
+
+    // FOR EVERY LOAD OF THE DOM, RENDER THE RANDOM COLOR
+    document.addEventListener("DOMContentLoaded", function () {
+        generateColor();
+    })
+    let clr = document.querySelector(".clr");
+    // generating random color
+    function generateColor() {
+        var randomColor = (Math.floor(Math.random() * 16777216)).toString(16);
+        clr.style.color = "#" + randomColor;
+        console.log(randomColor);
+    }
+
+</script>
+
+</html>
