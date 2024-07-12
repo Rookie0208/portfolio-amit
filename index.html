@@ -33,7 +33,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
-
+<!-- rgb(43,42,43) - black
+ rgb(237,254,160) -> yellow
+ rgb(208,223,248) -> blue
+ rgb(137,130,239) -> purple -->
 <style>
     .pop {
         /* border: 2px solid black; */
@@ -391,14 +394,14 @@
 
     <style>
         :root {
-            --cards: 3;
+            --cards: 4;
             --cardHeight: 90vh;
             --cardTopPadding: 1.5em;
-            --cardMargin: 4vw;
+            --cardMargin: 2vw;
         }
 
         .section-skill {
-            height: 400vh;
+            height: auto;
         }
         
         .section-skill {
@@ -416,7 +419,7 @@
             grid-template-columns: 1fr;
             grid-template-rows: repeat(var(--cards), var(--cardHeight));
             gap: var(--cardMargin);
-            padding-bottom: carc(var(--cards) * var(--cardTopPadding));
+            padding-bottom: calc(var(--cards) * var(--cardTopPadding));
             /* margin-bottom: var(--cardMargin); */
          }
 
@@ -437,8 +440,9 @@
 
          .card {
             position: sticky;
-            top: 10px;
-            padding-top: calc(var(--index) * var(--cardTopPadding));
+            top: 15px;
+            /* padding-top: 1rem; */
+            /* padding-top: calc(var(--index) * var(--cardTopPadding)); */
          }
 
          #card1 .card-body {
@@ -454,9 +458,10 @@
          }
          #card3 .card-body {
             background-color: rgb(63, 105, 142);
-            /* height: 100vh; */
+            /* height: auto; */
 
          }
+         
          #card4 .card-body {
             /* background-color: rgb(63, 105, 142); */
             background-color: rgb(215, 67, 131);
@@ -497,11 +502,19 @@
          }
 
          @media (max-width: 400px) {
+
+            .section-skill {
+                width: auto;
+            }
            
             .skill-container {
                 width: 40%;
                 margin: 0;
                 margin-left: 1rem;
+            }
+
+            #card4 {
+                margin-left: -1.7rem;
             }
 
             li h2 {
@@ -540,6 +553,25 @@
             transition: opacity 300ms ease;
 
         } */
+
+        .more-projects {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .more-projects h4 {
+            font-weight: bold;
+            font-size: 1.4rem;
+            padding: 0.6rem 2rem;
+            border: 1px solid gray;
+            border-radius: 40px;
+            background-color: rgb(255,254,254);
+        }
+        .more-projects h4 a {
+            text-decoration: none;
+            color: #4a4a4a;
+
+        }
     </style>
 
     <section class="section3 section-skill" id="skills">
@@ -591,8 +623,12 @@
             </a>
        </li>
             </ul>
-        </div>
 
+        </div>
+        
+        <div class="more-projects">
+            <h4> <a href="#">Wanna 👀 More??</a></h4>
+        </div>
     </section>
     <!-- <div class="curzor"></div> -->
    <script>

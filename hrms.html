@@ -1,94 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>HRMS</title>
+</head>
+<link rel="stylesheet" href="./stylesheet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <style>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-::-webkit-scrollbar {
-            width: 0px; /* Removes the scrollbar width */
-        }
-    .section-skill {
-        /* padding-top: 0.5rem; */
-        /* height: 100vh; */
-        width: 100vw;
-    }
-      
+   body {
+      background-color: rgb(43, 42, 43);
+   }
 
-     #card1 .card-body {
-        /* background-color: rgb(215, 67, 131); */
-        background-color: rgb(44,44,44);
-        /* height: 100vh; */
-     }
+   section {
+      height: auto;
+   }
 
-     .card-body {
-        box-sizing: border-box;
-        padding: 30px;
-        /* border-radius: 20px; */
-        box-shadow:  0 0 20px 0 rgba(0,0,0,0.3);
-        /* display: flex; */
-        /* justify-content: center; */
-        /* align-items: center; */
-     }
+   ::-webkit-scrollbar {
+      width: 0px;
+      /* Removes the scrollbar width */
+   }
 
-     li h2 {
-        font-size: 5rem;
-        margin-top: 2rem;
-        /* font-family: 'unica one'; */
-        font-family: 'mulish';
-        /* font-family: "Outfit", sans-serif; */
-        letter-spacing: 6px;
-        text-align: center;
-        color: rgb(240, 236, 236);
-     }
+   .section-skill {
+      /* padding-top: 0.5rem; */
+      /* height: 100vh; */
+      width: 100vw;
+   }
 
-     li a {
-        text-decoration: none;
-     }
-     li h5 {
-        color: rgb(240, 236, 236);
-        text-align: center;
-        font-family: 'Outfit';
-        letter-spacing: 6px;
-        font-size: 1.2rem;
-     }
 
-     .hrms-img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-     }
+   #card1 .card-body {
+      /* background-color: rgb(215, 67, 131); */
+      background-color: rgb(44, 44, 44);
+      /* height: 100vh; */
+   }
 
-     #card2 h2, #card2 h5 {
-        color: rgb(187, 184, 184);
+   .card-body {
+      box-sizing: border-box;
+      padding: 30px;
+      /* border-radius: 20px; */
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+      /* display: flex; */
+      /* justify-content: center; */
+      /* align-items: center; */
+   }
 
-     }
+   li h2 {
+      font-size: 5rem;
+      margin-top: 2rem;
+      /* font-family: 'unica one'; */
+      font-family: 'mulish';
+      /* font-family: "Outfit", sans-serif; */
+      letter-spacing: 6px;
+      text-align: center;
+      color: rgb(240, 236, 236);
+   }
 
-     .info-section-skill {
-        height: 100vh;
-        background-color: pink;
-     }
+   li a {
+      text-decoration: none;
+   }
 
+   li h5 {
+      color: rgb(240, 236, 236);
+      text-align: center;
+      font-family: 'Outfit';
+      letter-spacing: 6px;
+      font-size: 1.2rem;
+   }
+
+   .hrms-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   #card2 h2,
+   #card2 h5 {
+      color: rgb(187, 184, 184);
+
+   }
+
+   .info-section-skill {
+      height: 100vh;
+      background-color: rgb(248, 248, 248);
+   }
+
+   .info-container {
+      margin-left: 25%;
+      width: 50vw;
+      /* background-color: antiquewhite; */
+   }
+
+   .info-heading {
+      font-family: "Outfit", sans-serif;
+      color: #4a4a4a;
+      /* text-align: center; */
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+      /* background-color: blueviolet; */
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+   }
+
+   .info-headline h3 {
+      font-size: 3rem;
+      text-align: left;
+   }
+
+   .info-para p {
+      text-align: justify;
+      margin-top: 2.5rem;
+      font-size: 1.3rem;
+      text-align: left;
+      font-family: "Outfit", sans-serif;
+      letter-spacing: 1.5px;
+      margin-bottom: 1.5rem;
+   }
+
+   .table-content {
+      font-family: "Outfit", sans-serif;
+      /* width: 40%; */
+      display: flex;
+      /* align-items: center; */
+      justify-content: space-between;
+      font-size: 1.3rem;
+
+   }
+
+   .table-content .left-part h4 {
+      /* font-weight: 500; */
+      color: #282828;
+
+
+   }
+
+   .table-content .right-part h4 {
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #282828;
+
+   }
+
+   .logo {
+      color: white;
+   }
+
+   .logo span {
+      text-decoration: underline;
+   }
+
+   .info-dashboard-img {
+      width: 100vw;
+      background-color: rgb(248, 248, 248);
+
+      /* background-color: blue; */
+   }
+
+   .info-dashboard-img img {
+      border: 1px solid gray;
+      width: 80vw;
+      margin-left: 10%;
+      height: 60vh;
+      object-fit: fill;
+      border-radius: 15px;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+   }
+
+   .info-skills {
+
+      height: 100vh;
+      background-color: rgb(17, 25, 32);
+   }
+
+   .tech-stack-container {
+      margin-left: 25%;
+      width: 50vw;
+      padding-top: 2rem;
+
+   }
+
+   .skill-heading h3 {
+      color: white;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-align: center;
+      font-family: "Outfit", sans-serif;
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+
+      /* font-family: 'unica one'; */
+      /* font-family: 'mulish'; */
+   }
+
+   .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      color: white;
+      font-family: "Outfit", sans-serif;
+   }
+
+   .tech-head {
+      border-bottom: 1px solid white;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+
+   }
+
+   .tech-desc {
+      font-size: 1rem;
+   }
+
+   .tech-stack-boxes {
+      margin: 0 auto;
+      padding: 2rem;
+   }
 </style>
 
-<section class="section3 section-skill" id="skills">
-    <div class="skill-container">
-        <ul id="cards">
-            <li class="card" id="card1">
-                <a href="#">
-                 <div class="card-body">
-                    <h2>HRMS</h2>
-                    <div class="hrms-img">
-                        <img src="./images/hrms.gif" height="450px" alt="hrms image">
-                    </div>
-                    <h5>Human Resource Management System</h5>
-                 </div>
-                </a>
-            </li>        
-          
-        </ul>
-    </div>
+<body>
 
-</section>
-<section class="info-section-skill">
-<h2>More content to be added</h2>
-</section>
+
+   <!-- <i class="fa fa-bars" onclick="showMenu()"></i> -->
+
+   <section class="section3 section-skill" id="skills">
+
+
+      <div class="skill-container">
+         <ul id="cards">
+            <li class="card" id="card1">
+               <div class="card-body">
+                  <a href="#" class="logo" title="click me" onclick="myFunction()"><span><span class="clr">@</span>mit
+                        rawat</span></a>
+                  <h2>HRMS</h2>
+                  <div class="hrms-img">
+                     <img src="./images/hrms.gif" height="450px" alt="hrms image">
+                  </div>
+                  <h5>Human Resource Management System</h5>
+               </div>
+
+            </li>
+
+         </ul>
+      </div>
+
+   </section>
+   <section class="info-section-skill">
+      <div class="info-container">
+
+         <div class="info-heading">
+
+            <h2>OVERVIEW</h2>
+         </div>
+         <div class="info-headline">
+            <h3>
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ab inventore illo cupiditate quia
+               dolorum saepe harum, aliquid fugiat explicabo?
+            </h3>
+         </div>
+         <div class="info-para">
+            <p>
+               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolorum laborum rerum magni
+               numquam, eligendi non quae, libero tempore maiores rem veritatis officiis eaque alias! Lorem ipsum, dolor
+               sit amet consectetur adipisicing elit. Repellat, eveniet.
+            </p>
+         </div>
+         <div class="info-heading">
+
+            <h2>Team Members</h2>
+         </div>
+
+         <div class="info-table">
+            <div class="table-content">
+               <div class="left-part">
+                  <h4>Creative Lead</h4>
+               </div>
+               <div class="right-part">
+                  <h4>Amit Rawat</h4>
+                  <h4>Shivam Rawat</h4>
+                  <h4>Yuvraj Singh</h4>
+                  <h4>Saksham Saxena</h4>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+      <div class="info-dashboard-img">
+         <img src="./images/dashboard.png" alt="">
+      </div>
+      <div class="info-skills">
+         <div class="tech-stack-container">
+            <div class="skill-heading">
+               <h3>What we Used in the Process</h3>
+            </div>
+            <div class="tech-stack">
+               <div class="tech-stack-boxes">
+                  <div class="tech-header">
+
+                     <div class="tech-head">HTML</div>
+                     <!-- <img src="./images/c#-logo.jpg" alt="c#-logo"> -->
+                  </div>
+                  <div class="tech-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi. Lorem
+                     ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi.</div>
+               </div>
+               <div class="tech-stack-boxes">
+                  <div class="tech-head">CSS</div>
+                  <div class="tech-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi. Lorem
+                     ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi.</div>
+               </div>
+               <div class="tech-stack-boxes">
+                  <div class="tech-head">JavaScript</div>
+                  <div class="tech-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi. Lorem
+                     ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi.</div>
+               </div>
+               <div class="tech-stack-boxes">
+                  <div class="tech-head">C#</div>
+                  <div class="tech-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi. Lorem
+                     ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi.</div>
+               </div>
+               <div class="tech-stack-boxes">
+                  <div class="tech-head">Asp.net</div>
+                  <div class="tech-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi. Lorem
+                     ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi.</div>
+               </div>
+               <div class="tech-stack-boxes">
+                  <div class="tech-head">MySql</div>
+                  <div class="tech-disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi. Lorem
+                     ipsum dolor sit amet consectetur adipisicing elit. Esse, excepturi.</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <style>
+         .contact-me {
+            padding: 4rem;
+            height: 50vh;
+            /* background-color: rgb(248, 248, 248); */
+            background-color: rgb(238,238,238);
+         }
+
+         .contact-me .touch-link {
+            text-align: center;
+
+         }
+
+         .icons {
+            margin-top: 4rem;
+            text-align: center;
+         }
+
+         .touch-link a {
+            padding: 1rem 3rem;
+            border: 1px solid gray;
+            border-radius: 50px;
+            font-family: 'kalam';
+            text-decoration: none;
+            font-size: 4rem;
+            color: rgb(17, 25, 32);
+         }
+
+         .say-hi {
+            text-align: center;
+            margin-bottom: 3rem;
+         }
+
+         .say-hi h2 {
+            color: rgb(83, 83, 83);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            font-family: "Outfit", sans-serif;
+
+         }
+
+         /* .last-img{
+            position: relative;
+            bottom: 0;
+            text-align: center;
+         }
+         .last-img img {
+            height: 150px;
+         } */
+         
+      </style>
+      <div class="contact-me">
+         <div class="say-hi">
+            <h2>Work with ME</h2>
+         </div>
+         <div class="touch-link">
+            <a href="mailto:amitsr0208@gmail.com" class="mail-me">hii@amitsr.co</a>
+            <!-- <a href="tel:9643362998" class="link2">+919643362998</a> -->
+         </div>
+         <div class="icons">
+            <a href="http://www.facebook.com/amitsingh.rawat.777" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="http://www.instagram.com/amitrawat0208" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="http://www.twitter.com/AmitRawt1" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="http://www.linkedin.com/in/amit-rawat-47713020" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="http://www.linkedin.com/in/amit-rawat-47713020" target="_blank"><i class="fa fa-github"></i></a>
+         </div>
+
+         <!-- <div class="last-img">
+            <img src="./images/trust.jpg" alt="">
+         </div> -->
+      </div>
+      <style>
+         #contact_me {
+            height: 100vh;
+            background-color: rgb(248, 248, 248);
+         }
+
+         .contact-section {
+            margin-top: 10rem;
+         }
+      </style>
+
+      <!-- <section class="section4" id="contact_me">
+                 <div class="text-box2 slideanim">
+                     <div class="container contact-section">
+                             <h1 class="back">CONTACT</h1>
+                         <div class="text3">
+                             <div class="cta">
+                                 <h1>Impressed by work !! <br class="typing">Let's work together.</h1>
+                                
+         
+                                 <div class="touch">
+                                     <a href="mailto:amitsr0208@gmail.com" class="link">hii@amitsr.co</a>
+                                     <a href="tel:9643362998" class="link2">+919643362998</a>
+                                 </div>
+         
+                             </div>
+                             <div class="icons">
+                                 <a href="http://www.facebook.com/amitsingh.rawat.777" target="_blank"><i
+                                         class="fa fa-facebook"></i></a>
+                                 <a href="http://www.instagram.com/amitrawat0208" target="_blank"><i
+                                         class="fa fa-instagram"></i></a>
+                                 <a href="http://www.twitter.com/AmitRawt1" target="_blank"><i class="fa fa-twitter"></i></a>
+                                 <a href="http://www.linkedin.com/in/amit-rawat-47713020" target="_blank"><i
+                                         class="fa fa-linkedin"></i></a>
+                                 <a href="http://www.linkedin.com/in/amit-rawat-47713020" target="_blank"><i
+                                         class="fa fa-github"></i></a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </section> -->
+   </section>
+
+
+</body>
+
+</html>
